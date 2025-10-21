@@ -4,7 +4,7 @@ CREATE TABLE carreras (
     nombre_carrera VARCHAR(50) UNIQUE NOT NULL
 );
 
--- Tabla de lenguajes de programación
+-- Tabla de lenguajes de programacion
 CREATE TABLE lenguajes_programacion (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nombre_lenguaje VARCHAR(30) UNIQUE NOT NULL
@@ -29,7 +29,7 @@ CREATE TABLE estudiantes (
     CHECK (edad >= 16 AND edad <= 60)
 );
 
--- Tabla de relación estudiantes-lenguajes
+-- Tabla de relacion estudiantes-lenguajes
 CREATE TABLE estudiante_lenguajes (
     id INT AUTO_INCREMENT PRIMARY KEY,
     estudiante_id INT,
@@ -39,7 +39,7 @@ CREATE TABLE estudiante_lenguajes (
     UNIQUE(estudiante_id, lenguaje_id)
 );
 
--- Tabla de relación estudiantes-sistemas operativos
+-- Tabla de relacion estudiantes-sistemas operativos
 CREATE TABLE estudiante_sistemas_operativos (
     id INT AUTO_INCREMENT PRIMARY KEY,
     estudiante_id INT,
@@ -60,9 +60,9 @@ INSERT INTO sistemas_operativos (nombre_so) VALUES
 ('macOS'), ('Chrome OS');
 
 INSERT INTO carreras (nombre_carrera) VALUES
-('Ingeniería de Software'),
-('Ciencias de la Computación'),
-('Sistemas de Información'),
-('Tecnologías de la Información'),
-('Ingeniería en Computación'),
+('Ingenieria de Software'),
+('Ciencias de la Computacion'),
+('Sistemas de Informacion'),
+('Tecnologias de la Informacion'),
+('Ingenieria en Computacion'),
 ('Otra');

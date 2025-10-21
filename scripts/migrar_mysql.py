@@ -1,7 +1,5 @@
 import mysql.connector
 import psycopg2
-import sys
-
 
 def conectar_postgres():
     """Conectar a PostgreSQL"""
@@ -10,7 +8,7 @@ def conectar_postgres():
             host="localhost",
             database="encuesta_estudiantes",
             user="postgres",
-            password="password",
+            password="cangurito22",
             port="5432"
         )
         print("Conexión a PostgreSQL exitosa")
@@ -26,7 +24,7 @@ def conectar_mysql():
         conn = mysql.connector.connect(
             host="localhost",
             user="root",
-            password="password",
+            password="cangurito22",
             port="3306"
         )
         print("Conexión a MySQL exitosa")
@@ -46,7 +44,7 @@ def crear_esquema_mysql(conn_mysql):
         cur.execute("USE encuesta_estudiantes")
 
         # Leer y ejecutar script de esquema
-        with open('schemas/esquema_mysql.sql', 'r', encoding='utf-8') as f:
+        with open('C:/Users/Lenovo/Documents/Migracion_DBs/schemas/esquema_mysql.sql', 'r', encoding='utf-8') as f:
             sql_script = f.read()
 
         statements = sql_script.split(';')

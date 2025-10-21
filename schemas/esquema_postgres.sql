@@ -4,13 +4,13 @@ CREATE TABLE carreras (
     nombre_carrera VARCHAR(50) UNIQUE NOT NULL
 );
 
--- Tabla de lenguajes de programación (opciones múltiples)
+-- Tabla de lenguajes de programacion (opciones multiples)
 CREATE TABLE lenguajes_programacion (
     id SERIAL PRIMARY KEY,
     nombre_lenguaje VARCHAR(30) UNIQUE NOT NULL
 );
 
--- Tabla de sistemas operativos (opciones múltiples)
+-- Tabla de sistemas operativos (opciones multiples)
 CREATE TABLE sistemas_operativos (
     id SERIAL PRIMARY KEY,
     nombre_so VARCHAR(50) UNIQUE NOT NULL
@@ -27,7 +27,7 @@ CREATE TABLE estudiantes (
     fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Tabla de relación estudiantes-lenguajes (muchos a muchos)
+-- Tabla de relacion estudiantes-lenguajes (muchos a muchos)
 CREATE TABLE estudiante_lenguajes (
     id SERIAL PRIMARY KEY,
     estudiante_id INTEGER REFERENCES estudiantes(id) ON DELETE CASCADE,
@@ -35,7 +35,7 @@ CREATE TABLE estudiante_lenguajes (
     UNIQUE(estudiante_id, lenguaje_id)
 );
 
--- Tabla de relación estudiantes-sistemas operativos (muchos a muchos)
+-- Tabla de relacion estudiantes-sistemas operativos (muchos a muchos)
 CREATE TABLE estudiante_sistemas_operativos (
     id SERIAL PRIMARY KEY,
     estudiante_id INTEGER REFERENCES estudiantes(id) ON DELETE CASCADE,
@@ -56,9 +56,9 @@ INSERT INTO sistemas_operativos (nombre_so) VALUES
 
 -- Insertar datos de referencia para carreras
 INSERT INTO carreras (nombre_carrera) VALUES
-('Ingeniería de Software'),
-('Ciencias de la Computación'),
-('Sistemas de Información'),
-('Tecnologías de la Información'),
-('Ingeniería en Computación'),
+('Ingenieria de Software'),
+('Ciencias de la Computacion'),
+('Sistemas de Informacion'),
+('Tecnologias de la Informacion'),
+('Ingenieria en Computacion'),
 ('Otra');
